@@ -6,8 +6,16 @@ Seth Maurice-Brant
 def DrawGrid(inNum):
     if not inNum in range(3,11):
         return "ERROR"
-    print("-  -  -  -")
-    print("|\n\t|\n|\n\t|\n|\n\t|\n|\n\t|")
-    print("-  -  -  -")
+    sepUnit = "\n" + "+----"*inNum + "\n"
+    divider = "|     " * inNum
+    out = sepUnit + divider
+    bottomLine = "_____" * inNum
+    return out * inNum +"\n"+ bottomLine
 
-DrawGrid(7)
+# Test Grids
+
+print(DrawGrid(7)) # GRID
+print(DrawGrid(10)) # GRID
+print(DrawGrid(2)) # ERROR
+print(DrawGrid(11)) # ERROR
+print(DrawGrid(3)) # GRID
