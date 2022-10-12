@@ -7,10 +7,9 @@ def DrawGrid(inNum):
     if not inNum in range(3,11):
         return "ERROR"
     sepUnit = "\n" + "+----"*inNum + "\n"
-    divider = "|     " * inNum
+    divider = "|    " * inNum + "|"
     out = sepUnit + divider
-    bottomLine = "_____" * inNum
-    return out * inNum +"\n"+ bottomLine
+    return out * inNum + sepUnit
 
 # Test Grids
 
