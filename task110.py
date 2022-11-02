@@ -34,7 +34,7 @@ def Client():
     print(data)
 
 
-mode = input("Is this a [s]erver or a [c]lient?")
+mode = input("Is this a (s)erver or a (c)lient?")
 if mode == "s":
     Server()
 if mode == "c":
