@@ -17,8 +17,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
         while True:
             data = conn.recv(1024)
             data = data.decode("utf-8")
-            #conn.sendall(data)
+            print(f"Incoming message: {data}")
             msg = input("Type here: ")
             conn.sendall(bytes(msg,'utf-8'))
-            print(f"Incoming message: {data}")
           
