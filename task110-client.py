@@ -12,5 +12,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
     stream.connect((host, port))
     stream.send(b"Client connected")
     data = stream.recv(1024)
-
-print(f"Received {data!r}")
+    while True:
+        msg = input("Type here: ")
+        stream.send(bytes(msg, 'utf-8'))
+        data = stream.recv(1024)
+        data = data.decode('utf-8')
+        print(f"Received {data}")
