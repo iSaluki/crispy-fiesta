@@ -16,7 +16,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
 
 def SendMessage():
     msg = input("Type here: ")
-    stream.send(bytes(("<Client> "+msg),'utf-8'))
+    stream.send(bytes("<Client> "+msg,'utf-8')) #FIXME: Bad file descriptor, likely caused by concat of prefix and msg - similar issue in server script
 
 
 def ReceiveMessage():
