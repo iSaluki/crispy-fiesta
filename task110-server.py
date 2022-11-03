@@ -10,14 +10,14 @@ port = 65534
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
     stream.bind((host,port))
-    stream.listen()
+    stream.listen(1)
     conn, addr = stream.accept()
     with conn:
         print(f"Connected to {addr}")
         while True:
             data = conn.recv(1024)
             data = data.decode("utf-8")
-            print(f"Incoming message: {data}")
+            print(f"{data}")
             msg = input("Type here: ")
-            conn.sendall(bytes(msg,'utf-8'))
+            conn.sendall(bytes(("<Server> "+msg),'utf-8'))
           
