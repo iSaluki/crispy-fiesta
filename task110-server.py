@@ -14,10 +14,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
     conn, addr = stream.accept()
     with conn:
         print(f"Connected to {addr}")
-        while True:
-            data = conn.recv(1024)
-            data = data.decode("utf-8")
-            print(f"{data}")
-            msg = input("Type here: ")
-            conn.sendall(bytes(("<Server> "+msg),'utf-8'))
+        data = conn.recv(1024)
+        data = data.decode("utf-8")
+        print(f"{data}")
+        conn.send(bytes(("Hello client, from server"),'utf-8'))
+
           

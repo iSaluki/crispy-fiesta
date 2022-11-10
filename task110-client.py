@@ -11,19 +11,8 @@ port = 65534
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
     stream.connect((host, port))
-    stream.send(b"Client connected") # Send first message to server
-    data = stream.recv(1024) # Handle first message (connection initiator)
-
-def SendMessage():
-    msg = input("Type here: ")
-    stream.send(bytes("<Client> "+msg,'utf-8')) #FIXME: Bad file descriptor, likely caused by concat of prefix and msg - similar issue in server script
-
-
-def ReceiveMessage():
+    
+    stream.send(bytes("Hello server, from client",'utf-8'))
     data = stream.recv(1024)
     data = data.decode('utf-8')
     print(f"{data}")
-
-
-SendMessage()
-ReceiveMessage()
