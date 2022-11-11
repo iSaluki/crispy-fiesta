@@ -5,8 +5,8 @@ Seth Maurice-Brant
 
 import socket
 
-host = "127.0.0.1"
-port = 65534
+host = "10.25.5.80"
+port = 80
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
     stream.bind((host,port))

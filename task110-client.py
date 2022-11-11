@@ -6,7 +6,7 @@ Seth Maurice-Brant
 import socket
 
 
-host = "127.0.0.1"
+host = "10.25.5.207"
 port = 65534 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
