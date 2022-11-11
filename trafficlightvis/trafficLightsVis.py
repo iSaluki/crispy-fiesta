@@ -19,8 +19,8 @@ while keepLooping:
     # Create a blank frame
     frame.fill((255,255,255))
     # Draw the frame content
-    pygame.draw.rect(frame,(0,0,0), pygame.Rect(0,500,1920,100))
-    
+    pygame.draw.rect(frame,(0,0,0), pygame.Rect(0,500,1920,100)) # Road
+    pygame.draw.circle(frame,(255,0,0),(80,70), 25) # Red light
 
 
     # Handle display update
